@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:PizzaApp.UI.ViewModels" 
+             
+             x:Class="PizzaApp.UI.Views.ListePizzaPage">
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" 
+				Margin="{OnPlatform iOS='0,0,25,0', Android='0,0,20,0', Default=0}"
+				Orientation="Horizontal">
+
+            <Image Source="pizza_logo.png" HeightRequest="40" />
+            <Label Text="Pizzas" 
+			FontAttributes="Bold"
+			TextColor="White" VerticalOptions="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="DarkCyan">
+            <ListView x:Name="ListePizza" ItemsSource="{Binding Pizzas}"  Margin="0,20,0,0" HeightRequest="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0" >
+                                    <Label Text="{Binding Nom}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="20"></Label>
+                                    <Label HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" FontSize="15">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Prix}"></Span>
+                                                <Span Text=" €"></Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    
+                                </StackLayout>
+                                <Label Text="{Binding Description}" Margin="20,0"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
