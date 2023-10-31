@@ -15,7 +15,11 @@ namespace PizzaApp.UI
 
             //DependencyService.Register<MockDataStore>();
             //MainPage = new AppShell();
-            MainPage = new NavigationPage(new ListePizzaPage());
+
+            var navigationPage = new NavigationPage(new ListePizzaPage());
+            navigationPage.BarBackgroundColor = Color.FromHex("#1abbd4");                
+            MainPage = navigationPage;
+            
         }
 
         protected override void OnStart()
