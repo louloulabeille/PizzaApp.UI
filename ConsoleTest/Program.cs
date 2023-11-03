@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PizzaApp.UI.Application.ModelDTO;
+using PizzaApp.UI.Application.Outils.Api;
 using System.IO;
 using System.Net;
 using System.Net.Http.Headers;
@@ -10,6 +11,16 @@ using System.Text.Json.Serialization;
 Console.WriteLine("Hello, World!");
 
 
+HttpClientPizza http = new HttpClientPizza();
+var pizzas =  await http.ReadApiJson();
+
+foreach (var pizza in pizzas)
+{
+    Console.WriteLine(pizza.Nom);
+    Console.WriteLine(pizza.Ingredients[0].Nom);
+}
+
+/*
 var socketHandler = new SocketsHttpHandler()
 {
     PooledConnectionLifetime = TimeSpan.FromSeconds(5),
@@ -44,7 +55,7 @@ catch (HttpRequestException hTRex)
 {
     Console.WriteLine(hTRex.Message);
     response.Dispose();
-}
+}*/
 
 
 /*HttpClient client = new HttpClient();
