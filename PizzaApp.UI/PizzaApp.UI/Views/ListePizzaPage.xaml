@@ -1,45 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:PizzaApp.UI.ViewModels" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:PizzaApp.UI.ViewModels" xmlns:models="clr-namespace:PizzaApp.UI.Models" x:DataType="viewmodels:ListePizzaViewModel"
              x:Class="PizzaApp.UI.Views.ListePizzaPage"
              >
+    <!--#region Navigation page-->
     <NavigationPage.TitleView >
-
         <StackLayout HorizontalOptions="Center" 
 				Margin="{OnPlatform iOS='0,0,25,0', Android='0,0,20,0', Default=0}"
 				Orientation="Horizontal">
-
             <Image Source="pizza_logo.png" HeightRequest="40" />
             <Label Text="Pizzas" 
 			FontAttributes="Bold"
 			TextColor="White" VerticalOptions="Center" />
         </StackLayout>
     </NavigationPage.TitleView>
+    <!--#endregion-->
+
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-            <ListView x:Name="ListePizza" ItemsSource="{Binding Pizzas}"  Margin="0,20,0,0" HeightRequest="200">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell >
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,0" >
-                                    <Label Text="{Binding Nom}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="20"></Label>
-                                    <Label HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" FontSize="15">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Prix}"></Span>
-                                                <Span Text=" €"></Span>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    
-                                </StackLayout>
-                                <Label Text="{Binding Description}" Margin="20,0"></Label>
+        <ListView x:Name="ListePizza" ItemsSource="{Binding Pizzas}"  Margin="0,5,0,0" 
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowHeight="100">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Pizza">
+                    <ViewCell>
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="90"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="60"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Aspect="AspectFill" Margin="5,5" Source="{Binding ImageUrl}"></Image>
+                            <StackLayout Orientation="Vertical" Spacing="0" Grid.Column="1" Margin="10,0,0,0" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Nom}" HorizontalTextAlignment="Start"  
+                                           FontAttributes="Bold" FontSize="20"></Label>
+                                <Label Text="{Binding StringIngredients}" Margin="5,0" MaxLines="2" LineBreakMode="TailTruncation" 
+                                       TextColor="#555555" FontSize="15"></Label>
                             </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" 
+                                   Grid.Column="2" Text ="{Binding Prix, StringFormat='{0}€'}"  Margin="0,0,5,0">
+                                <!--<Label.FormattedText> <FormattedString> <Span Text="5"></Span> <Span Text=" €"></Span> </FormattedString> </Label.FormattedText>-->
+                            </Label>
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

@@ -7,7 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApp.UI.Android", "Pizz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApp.UI.iOS", "PizzaApp.UI\PizzaApp.UI.iOS\PizzaApp.UI.iOS.csproj", "{75970CCC-17DA-4598-A2B9-58678A207C0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApp.UI", "PizzaApp.UI\PizzaApp.UI\PizzaApp.UI.csproj", "{8708487E-1621-4BE6-B6B9-65812FBEB02C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaApp.UI", "PizzaApp.UI\PizzaApp.UI\PizzaApp.UI.csproj", "{8708487E-1621-4BE6-B6B9-65812FBEB02C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{6D8284B3-42CF-419E-A86F-091891F8ED28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApp.UI.Application", "PizzaApp.UI.Application\PizzaApp.UI.Application.csproj", "{379B0E9C-6B73-450E-8ACC-273A5F561F80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7EE4F418-F18A-46DA-8F5F-6708B0492808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{9990CFAE-20F4-4A8C-AF87-D226F7E50631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,9 +81,37 @@ Global
 		{8708487E-1621-4BE6-B6B9-65812FBEB02C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{8708487E-1621-4BE6-B6B9-65812FBEB02C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{8708487E-1621-4BE6-B6B9-65812FBEB02C}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Release|iPhone.Build.0 = Release|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Release|iPhone.Build.0 = Release|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{379B0E9C-6B73-450E-8ACC-273A5F561F80} = {6D8284B3-42CF-419E-A86F-091891F8ED28}
+		{9990CFAE-20F4-4A8C-AF87-D226F7E50631} = {7EE4F418-F18A-46DA-8F5F-6708B0492808}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AF23D08-0F3E-46A2-8EF7-C898AD0F5B40}

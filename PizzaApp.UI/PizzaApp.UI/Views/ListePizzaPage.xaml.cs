@@ -23,13 +23,8 @@ namespace PizzaApp.UI.Views
             ViewModelPizza.PizzasAddRange(AjoutePizzas());
             ListePizza.ItemsSource = ViewModelPizza.Pizzas;
 
-            //this.BindingContext = ViewModelPizza;
+            this.BindingContext = this;
             
-        }
-
-        private void CreateListViewPizza()
-        {
-            ListePizza.ItemsSource = ViewModelPizza.Pizzas;
         }
 
         // méthode de test pour ajouter des pizzas
@@ -38,18 +33,20 @@ namespace PizzaApp.UI.Views
             List<Pizza> pizzas = new List<Pizza>();
             pizzas.Add(new Pizza()
             {
-                Nom="Sud Ouest",
-                Prix=15.20m,
-                Description="Pizza avec du canard gras.",
-                Ingredients = new string[] {"tranche de magret de canard fumé","gésier de canard confit","noix" }
+                Nom = "Sud Ouest",
+                Prix = 15.20m,
+                Description = "Pizza avec du canard gras.",
+                Ingredients = new string[] { "tranche de magret de canard fumé", "gésier de canard confit", "noix" },
+                ImageUrl = @"https://img.over-blog-kiwi.com/0/97/63/14/20140919/ob_ae1f56_p1140688-2-pizza-sud-ouest-border.jpg"
             });
 
             pizzas.Add(new Pizza()
             {
-                Nom = "Margarita",
+                Nom = "margarita",
                 Prix = 10.5m,
                 Description = "Pizza avec du jambon et de la mozza.",
-                Ingredients = new string[] {"tomate","jambon","mozza"}
+                Ingredients = new string[] {"tomate","jambon","mozza"},
+                ImageUrl = @"https://images7.alphacoders.com/596/596343.jpg"
             });
 
             pizzas.Add(new Pizza()
@@ -57,7 +54,8 @@ namespace PizzaApp.UI.Views
                 Nom = "Reine",
                 Prix = 11.80m,
                 Description = "Pizza avec du jambon, de la mozza et des champignons de Paris.",
-                Ingredients = new string[] { "tomate", "jambon", "mozza", "champignon de Paris" }
+                Ingredients = new string[] { "tomate", "jambon", "mozza", "champignon de Paris" },
+                ImageUrl = @"https://www.pizza-delea.com/wp-content/uploads/2017/10/REINE-1320x880.jpg"
             });
             return pizzas;
         }
