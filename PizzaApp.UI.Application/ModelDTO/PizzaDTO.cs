@@ -10,7 +10,7 @@ namespace PizzaApp.UI.Application.ModelDTO
         public string Nom;
         public string Description { get; set; }
         public decimal Prix { get; set; }
-        public string[] Ingredients { get; set; }
+        public IngredientDTO[] Ingredients { get; set; }
         public string ImageUrl { get; set; }
     }
 }
