@@ -31,7 +31,8 @@ namespace PizzaApp.UI.Views
         public List<Pizza> AjoutePizzas()
         {
             List<Pizza> pizzas = new List<Pizza>();
-            pizzas.Add(new Pizza()
+            
+            /*pizzas.Add(new Pizza()
             {
                 Nom = "Sud Ouest",
                 Prix = 15.20m,
@@ -56,7 +57,7 @@ namespace PizzaApp.UI.Views
                 Description = "Pizza avec du jambon, de la mozza et des champignons de Paris.",
                 Ingredients = new string[] { "tomate", "jambon", "mozza", "champignon de Paris" },
                 ImageUrl = @"https://www.pizza-delea.com/wp-content/uploads/2017/10/REINE-1320x880.jpg"
-            });
+            });*/
             return pizzas;
         }
 

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+//using PizzaApp.UI.Application.Outils.Api;
 
 namespace PizzaApp.UI.ViewModels
 {
@@ -12,6 +13,7 @@ namespace PizzaApp.UI.ViewModels
     {
         public ICollection<Pizza> _pizzas = new List<Pizza>();
         public ICollection<Pizza> Pizzas {  get { return _pizzas; } }
+        //private readonly BaseHttpClientPizza clientPizza;
 
         public ListePizzaViewModel() { }
 

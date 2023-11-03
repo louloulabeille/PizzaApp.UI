@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using PizzaApp.UI.Application.ModelDTO;
-using PizzaApp.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -20,7 +19,6 @@ namespace PizzaApp.UI.Application.Outils.Api
 
         public HttpClientPizza() : base()
         {
-            _httpMethod = "GET";
             _baseAdresse = @"http://localhost:5065/";
             _url = @"api/v1/pizza";
             Init();

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaApp.UI.Application\PizzaApp.UI.Application.csproj" />
-    <ProjectReference Include="..\PizzaApp.UI\PizzaApp.UI\PizzaApp.UI.csproj" />
   </ItemGroup>
 
 </Project>
